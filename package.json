@@ -1,0 +1,60 @@
+{
+  "private": true,
+  "name": "remix-worker-template",
+  "main": "./worker.js",
+  "description": "A demo of Remix running on Cloudflare workers.",
+  "license": "MIT",
+  "scripts": {
+    "cleanup": "rimraf .cache ./build ./public/build worker.js",
+    "build:tailwind": "tailwindcss -o app/styles/tailwind.css",
+    "build:remix": "remix build",
+    "build:worker": "NODE_ENV=production ts-node ./build.ts",
+    "build": "npm run build:remix && npm run build:worker",
+    "cypress": "cypress open",
+    "dev:tailwind": "tailwindcss -o app/styles/tailwind.css --watch",
+    "dev:miniflare": "miniflare --kv REDIRECTS --kv-persist --build-command \"npx ts-node ./build.ts\" --disable-cache --watch",
+    "dev:remix": "remix watch",
+    "dev": "NODE_ENV=development concurrently \"npm:dev:*\"",
+    "populatekv": "node ./scripts/populate-kv.js",
+    "postinstall": "remix setup cloudflare-workers",
+    "prebuild": "npm run cleanup",
+    "test:cypress": "cypress run",
+    "test": "start-server-and-test miniflare http-get://localhost:8787 test:cypress",
+    "deploy": "wrangler publish",
+    "start": "miniflare --kv REDIRECTS --kv-persist"
+  },
+  "dependencies": {
+    "@cloudflare/kv-asset-handler": "^0.1.3",
+    "@remix-run/cloudflare-workers": "^0.20.1",
+    "@remix-run/react": "^0.20.1",
+    "classnames": "^2.3.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^6.0.0-beta.8",
+    "remix": "^0.20.1"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^3.1.1",
+    "@cloudflare/wrangler": "^1.19.4",
+    "@remix-run/dev": "^0.20.1",
+    "@tailwindcss/typography": "^0.4.1",
+    "@testing-library/cypress": "^8.0.1",
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "concurrently": "^6.3.0",
+    "cypress": "^8.7.0",
+    "daisyui": "^1.16.2",
+    "esbuild": "^0.13.12",
+    "miniflare": "^1.4.1",
+    "patch-package": "^6.4.7",
+    "rimraf": "^3.0.2",
+    "start-server-and-test": "^1.14.0",
+    "tailwindcss": "^2.2.19",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "sideEffects": false
+}

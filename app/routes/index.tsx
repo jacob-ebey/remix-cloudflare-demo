@@ -20,6 +20,12 @@ export default function Index() {
               sites that run on the edge without the drawbacks of static
               generation!
             </p>
+            <a
+              className="btn btn-primary"
+              href="https://github.com/jacob-ebey/remix-cloudflare-demo"
+            >
+              View Source
+            </a>
           </div>
         </div>
       </section>

@@ -9,7 +9,7 @@
     "build:tailwind": "tailwindcss --minify -o app/styles/tailwind.css",
     "build:remix": "remix build",
     "build:worker": "NODE_ENV=production ts-node ./build.ts",
-    "build": "npm run build:remix && npm run build:worker",
+    "build": "npm run build:tailwind && npm run build:remix && npm run build:worker",
     "dev:cypress": "cypress open",
     "dev:tailwind": "tailwindcss -o app/styles/tailwind.css --watch",
     "dev:miniflare": "miniflare --kv REDIRECTS --kv-persist --build-command \"npx ts-node ./build.ts\" --disable-cache --watch",

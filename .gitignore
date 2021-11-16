@@ -5,6 +5,7 @@ node_modules
 /.mf
 /build
 /public/build
+/app/styles/tailwind.css
 
 worker.js
 

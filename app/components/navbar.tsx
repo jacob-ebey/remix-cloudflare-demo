@@ -8,7 +8,7 @@ export default function Navbar() {
     <div className="navbar shadow-lg bg-neutral text-neutral-content">
       {pathname !== "/" ? (
         <div className="flex-none">
-          <Link to="/" className="btn btn-square btn-ghost">
+          <Link to="/" className="btn btn-square btn-ghost" title="Go home">
             <svg
               fill="none"
               viewBox="0 0 24 24"

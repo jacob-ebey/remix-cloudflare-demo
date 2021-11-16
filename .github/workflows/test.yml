@@ -1,0 +1,24 @@
+name: Test
+on: [push]
+jobs:
+  deploy:
+    name: Running Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v2
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+
+      - name: 📥 Download deps
+        uses: bahmutov/npm-install@v1
+
+      - name: Run tests
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          start: npm start

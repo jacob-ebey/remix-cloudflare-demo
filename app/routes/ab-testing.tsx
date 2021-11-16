@@ -76,7 +76,7 @@ export default function AbTesting() {
         <Form method="post" className="inline-block" replace>
           <input type="hidden" name="bucket" value="" />
           <button type="submit" className={cn("btn", !bucket && "btn-active")}>
-            Original Bucket
+            Remove Bucket
           </button>
         </Form>{" "}
         <Form method="post" className="inline-block" replace>

@@ -4,7 +4,7 @@ describe("ab-testing", () => {
   });
 
   it("should show original", () => {
-    cy.findByText("Original Bucket", { exact: true }).click();
+    cy.findByText("Remove Bucket", { exact: true }).click();
     cy.findByText("Bucket: none", { exact: true }).should("exist");
   });
 

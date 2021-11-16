@@ -8,7 +8,7 @@ async function run() {
 
   let REDIRECTS = await miniflare.getKVNamespace("REDIRECTS");
 
-  for (let i = 1; i <= 10000; i++) {
+  for (let i = 1; i <= 1000; i++) {
     await REDIRECTS.put(`/redirects/${i}`, `redirects/post/${i}`);
   }
 }

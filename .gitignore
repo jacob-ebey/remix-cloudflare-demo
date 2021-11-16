@@ -1,5 +1,6 @@
 node_modules
 
+.DS_Store
 /.cache
 /.mf
 /build
@@ -7,4 +8,5 @@ node_modules
 
 worker.js
 
+/cypress/screenshots
 /cypress/videos

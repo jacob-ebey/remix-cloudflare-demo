@@ -101,6 +101,8 @@ export default function AbTesting() {
 
       <img
         alt={`${bucket || "default"} bucket image`}
+        height={934}
+        width={700}
         src={(() => {
           switch (bucket) {
             case "a":

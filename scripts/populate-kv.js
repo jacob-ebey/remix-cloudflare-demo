@@ -16,7 +16,7 @@ async function run() {
 run()
   .then(() => {
     console.log("Populated KV Store");
-    process.exit(1);
+    process.exit(0);
   })
   .catch((err) => {
     console.error(err);

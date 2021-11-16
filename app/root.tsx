@@ -1,4 +1,8 @@
-import type { LinksFunction, LoaderFunction } from "remix";
+import type {
+  LinksFunction,
+  LoaderFunction,
+  ShouldReloadFunction,
+} from "remix";
 import {
   json,
   Links,
@@ -27,6 +31,10 @@ export let loader: LoaderFunction = async ({ request }) => {
   let theme = session.get("theme") || "dark";
 
   return json({ theme });
+};
+
+export let unstable_shouldReload: ShouldReloadFunction = ({ submission }) => {
+  return !!submission && submission.action === "/themes";
 };
 
 function Document({

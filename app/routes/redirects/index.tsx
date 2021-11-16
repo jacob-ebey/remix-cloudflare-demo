@@ -20,7 +20,7 @@ export default function RedirectsIndex() {
   let { err } = useLoaderData();
 
   return (
-    <div className="container mx-auto prose px-4 py-8">
+    <main className="container mx-auto prose px-4 py-8">
       <h1>AB testing with buckets</h1>
 
       {err ? <p className="text-error">{err}</p> : null}
@@ -36,6 +36,6 @@ export default function RedirectsIndex() {
         Every route returns a latency (added as a query param) which should give
         you an idea of how the performance reading from a KV store is.
       </p>
-    </div>
+    </main>
   );
 }

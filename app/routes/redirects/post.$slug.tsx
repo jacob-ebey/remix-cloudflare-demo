@@ -32,7 +32,7 @@ export default function Post() {
   console.log({ latency });
 
   return (
-    <div className="container mx-auto prose px-4 py-8">
+    <main className="container mx-auto prose px-4 py-8">
       <h1>Post {slug}</h1>
       {typeof latency === "string" ? <p>latency: {latency}ms</p> : null}
       <p>
@@ -44,6 +44,6 @@ export default function Post() {
           </Fragment>
         ))}
       </p>
-    </div>
+    </main>
   );
 }

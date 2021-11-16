@@ -1,9 +1,9 @@
-describe('Index', () => {
+describe("index", () => {
   beforeEach(() => {
-    cy.visit('/');
+    cy.visit("/");
   });
 
-  it('should show the loader message', () => {
-    cy.findByText('this is awesome 😎', { exact: false }).should('exist');
+  it("should show the hero", () => {
+    cy.findByText("Remix on Cloudflare", { exact: false }).should("exist");
   });
 });

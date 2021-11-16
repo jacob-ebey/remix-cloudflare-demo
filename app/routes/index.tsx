@@ -31,43 +31,45 @@ export default function Index() {
       </section>
 
       <section className="container my-12 mx-auto px-4">
-        <div className="flex flex-wrap -mx-1 lg:-mx-4">
-          <div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-            <Link
-              to="ab-testing"
-              className="card lg:card-side bordered hover:border-primary-focus"
-            >
-              <div className="card-body">
-                <h2 className="card-title">Simple A/B Test</h2>
-                <p>Run simple A/B tests based on randomly assigned cookies.</p>
-              </div>
-            </Link>
-          </div>
-          <div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-            <Link
-              to="redirects"
-              className="card lg:card-side bordered hover:border-primary-focus"
-            >
-              <div className="card-body">
-                <h2 className="card-title">Edge Redirects</h2>
-                <p>A resource route that performs redirects at the edge.</p>
-              </div>
-            </Link>
-          </div>
-          <div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-            <Link
-              to="geolocation"
-              className="card lg:card-side bordered hover:border-primary-focus"
-            >
-              <div className="card-body">
-                <h2 className="card-title">Geolocation</h2>
-                <p>
-                  Access the users location through Cloudflare request
-                  properties.
-                </p>
-              </div>
-            </Link>
-          </div>
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <Link
+            to="themes"
+            className="card lg:card-side bordered hover:border-primary-focus"
+          >
+            <div className="card-body">
+              <h2 className="card-title">Multiple Themes</h2>
+              <p>User selectable themes with zero flicker on page load.</p>
+            </div>
+          </Link>
+          <Link
+            to="ab-testing"
+            className="card lg:card-side bordered hover:border-primary-focus"
+          >
+            <div className="card-body">
+              <h2 className="card-title">Simple A/B Test</h2>
+              <p>Run simple A/B tests based on randomly assigned cookies.</p>
+            </div>
+          </Link>
+          <Link
+            to="redirects"
+            className="card lg:card-side bordered hover:border-primary-focus"
+          >
+            <div className="card-body">
+              <h2 className="card-title">Edge Redirects</h2>
+              <p>A resource route that performs redirects at the edge.</p>
+            </div>
+          </Link>
+          <Link
+            to="geolocation"
+            className="card lg:card-side bordered hover:border-primary-focus"
+          >
+            <div className="card-body">
+              <h2 className="card-title">Geolocation</h2>
+              <p>
+                Access the users location through Cloudflare request properties.
+              </p>
+            </div>
+          </Link>
         </div>
       </section>
     </main>

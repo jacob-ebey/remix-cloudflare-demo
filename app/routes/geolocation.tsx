@@ -30,7 +30,7 @@ export default function Geolocation() {
   let { formattedLocation, country } = useLoaderData();
 
   return (
-    <div className="container mx-auto prose px-4 py-8">
+    <main className="container mx-auto prose px-4 py-8">
       <h1>Geolocation</h1>
 
       <p>
@@ -45,7 +45,7 @@ export default function Geolocation() {
       <p>Currencies</p>
       <ul>
         {Object.entries(country.currencies).map(([abbr, currency]: any) => (
-          <li key={abbr}>
+          <li key={abbr} data-testid="currency">
             {abbr}: {currency.name} ({currency.symbol})
           </li>
         ))}
@@ -53,9 +53,11 @@ export default function Geolocation() {
       <p>Languages</p>
       <ul>
         {Object.values(country.languages).map((name: any) => (
-          <li key={name}>{name}</li>
+          <li key={name} data-testid="language">
+            {name}
+          </li>
         ))}
       </ul>
-    </div>
+    </main>
   );
 }

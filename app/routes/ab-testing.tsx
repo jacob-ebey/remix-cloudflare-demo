@@ -59,7 +59,7 @@ export default function AbTesting() {
   let { bucket } = useLoaderData();
 
   return (
-    <div className="container mx-auto prose px-4 py-8">
+    <main className="container mx-auto prose px-4 py-8">
       <h1>AB testing with buckets</h1>
       <p>
         In this demo we use cookies to assign a bucket with the variant to show.
@@ -69,6 +69,9 @@ export default function AbTesting() {
         Click one of the buttons below to assign the bucket you are in. Even
         after re-loading the page you will remain in the assigned bucket.
       </p>
+
+      <p>Bucket: {bucket ? bucket : "none"}</p>
+
       <div>
         <Form method="post" className="inline-block" replace>
           <input type="hidden" name="bucket" value="" />
@@ -109,6 +112,6 @@ export default function AbTesting() {
           }
         })()}
       />
-    </div>
+    </main>
   );
 }

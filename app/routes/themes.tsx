@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import type { ActionFunction, LoaderFunction } from "remix";
+import type { ActionFunction, LoaderFunction, MetaFunction } from "remix";
 import { json, Form, useLoaderData, useSubmit } from "remix";
 
 import { unencryptedSession } from "../sessions.server";
@@ -16,6 +16,13 @@ let VALID_THEMES = [
   "cyberpunk",
   "valentine",
 ];
+
+export let meta: MetaFunction = () => {
+  return {
+    title: "Themes | Remix Cloudflare Demo",
+    description: "Demo utilizing cookies to change the theme.",
+  };
+};
 
 export let action: ActionFunction = async ({ request }) => {
   let session = await unencryptedSession.getSession(

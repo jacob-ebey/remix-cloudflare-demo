@@ -2,6 +2,8 @@ let { Miniflare } = require("miniflare");
 
 async function run() {
   let miniflare = new Miniflare({
+    script: " ",
+    buildCommand: " ",
     kvNamespaces: ["REDIRECTS"],
     kvPersist: true,
   });

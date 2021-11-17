@@ -36,11 +36,16 @@ export default function Post() {
       <h1>Post {slug}</h1>
       {typeof latency === "string" ? <p>latency: {latency}ms</p> : null}
       <p>
-        <Link to="/redirects">Edge Redirects</Link>
+        <Link prefetch="intent" to="/redirects">
+          Edge Redirects
+        </Link>
         {extraRedirects.map((to: number) => (
           <Fragment key={to}>
             {" "}
-            | <Link to={`/redirects/${to}`}>/redirects/{to}</Link>
+            |{" "}
+            <Link prefetch="intent" to={`/redirects/${to}`}>
+              /redirects/{to}
+            </Link>
           </Fragment>
         ))}
       </p>

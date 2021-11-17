@@ -4,5 +4,8 @@
 
 for i in {1..1000}
 do
-  wrangler kv:key put --binding=REDIRECTS "/redirects/$i" "/redirects/post/$i"
+  wrangler kv:key put --binding=REDIRECTS "/redirects/$i" "/redirects/post/$i" &
 done
+
+wait
+echo "Populated KV in production"

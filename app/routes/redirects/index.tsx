@@ -26,10 +26,16 @@ export default function RedirectsIndex() {
       {err ? <p className="text-error">{err}</p> : null}
 
       <p>
-        This demo redirects any path from <Link to="1">/redirects/1</Link> -{" "}
-        <Link to="1000">/redirects/1000</Link> to <code>/redirects/post/1</code>{" "}
-        - <code>/redirects/post/1000</code> by looking up the pathname in a
-        Cloudflare KV store.
+        This demo redirects any path from{" "}
+        <Link prefetch="intent" to="1">
+          /redirects/1
+        </Link>{" "}
+        -{" "}
+        <Link prefetch="intent" to="1000">
+          /redirects/1000
+        </Link>{" "}
+        to <code>/redirects/post/1</code> - <code>/redirects/post/1000</code> by
+        looking up the pathname in a Cloudflare KV store.
       </p>
 
       <p>

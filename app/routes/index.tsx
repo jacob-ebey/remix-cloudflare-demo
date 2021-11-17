@@ -33,6 +33,7 @@ export default function Index() {
       <section className="container my-12 mx-auto px-4">
         <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           <Link
+            prefetch="intent"
             to="themes"
             className="card lg:card-side bordered hover:border-primary-focus"
           >
@@ -42,6 +43,7 @@ export default function Index() {
             </div>
           </Link>
           <Link
+            prefetch="intent"
             to="ab-testing"
             className="card lg:card-side bordered hover:border-primary-focus"
           >
@@ -51,6 +53,7 @@ export default function Index() {
             </div>
           </Link>
           <Link
+            prefetch="intent"
             to="redirects"
             className="card lg:card-side bordered hover:border-primary-focus"
           >
@@ -60,6 +63,7 @@ export default function Index() {
             </div>
           </Link>
           <Link
+            prefetch="intent"
             to="geolocation"
             className="card lg:card-side bordered hover:border-primary-focus"
           >

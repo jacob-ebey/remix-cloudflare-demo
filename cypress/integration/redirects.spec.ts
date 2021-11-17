@@ -3,7 +3,7 @@ describe("redirects", () => {
     cy.visit("/redirects");
   });
 
-  it("should show the loader message", () => {
+  it("should redirect to a post", () => {
     cy.findByText("/redirects/1", { exact: true }).click();
     cy.url().should("include", "/redirects/post/1");
   });

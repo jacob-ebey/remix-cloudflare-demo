@@ -18,9 +18,6 @@ export let loader: LoaderFunction = async ({ request }) => {
 
   let redirectPath = await REDIRECTS.get(url.pathname);
   redirectPath = redirectPath || `/redirects?err=${url.pathname} not found`;
-  if (!redirectPath.startsWith("/")) {
-    redirectPath = "/" + redirectPath
-  }
 
   return redirect(`${redirectPath}?l=${Date.now() - start}`);
 };

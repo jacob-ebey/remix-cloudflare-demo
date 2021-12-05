@@ -21,7 +21,7 @@ export default function RedirectsIndex() {
 
   return (
     <main className="container mx-auto prose px-4 py-8">
-      <h1>AB testing with buckets</h1>
+      <h1>Redirects</h1>
 
       {err ? <p className="text-error">{err}</p> : null}
 

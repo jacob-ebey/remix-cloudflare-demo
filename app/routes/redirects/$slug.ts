@@ -1,10 +1,6 @@
 import type { LoaderFunction, MetaFunction } from "remix";
 import { redirect } from "remix";
 
-declare global {
-  const REDIRECTS: KVNamespace;
-}
-
 export let meta: MetaFunction = ({ params }) => {
   return {
     title: `Post ${params.slug} | Remix Cloudflare Demo`,

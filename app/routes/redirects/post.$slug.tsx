@@ -29,7 +29,6 @@ export let loader: LoaderFunction = ({ params, request }) => {
 
 export default function Post() {
   let { extraRedirects, latency, slug } = useLoaderData();
-  console.log({ latency });
 
   return (
     <main className="container mx-auto prose px-4 py-8">
